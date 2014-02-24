@@ -33,14 +33,14 @@ footer.joli {
 .big-shadow, .reveal section.present[data-background] h1, .reveal section.present[data-background] h2, .reveal section.present[data-background] h3, .reveal section.present[data-background] h4, .reveal section.present[data-background] h5, .reveal section.present[data-background] h6 {
   text-shadow: -5px 5px 25px #000, 5px  -5px 25px #000, 5px 5px 25px #000, -5px -5px 25px #000; }
 
-.reveal section a img {
-  background: none;
-  border: none;
-  box-shadow: none; }
+.reveal section a img, .reveal section img {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important; }
 
 .reveal section a:hover img {
-  background: none;
-  box-shadow: none; }
+  background: none !important;
+  box-shadow: none !important; }
 
 .reveal section .footnote {
   margin-top: 100px;
