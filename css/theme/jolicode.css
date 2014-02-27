@@ -61,6 +61,12 @@ footer.joli {
   line-height: 1.5em; }
 .reveal section li {
   padding: 10px 0; }
+.reveal section p > code {
+  background-color: #3e3e3e;
+  border: 1px solid #7f7f7f;
+  color: #efefef;
+  font-style: serif;
+  padding: 3px 10px; }
 .reveal section pre {
   width: 100%; }
   .reveal section pre code {

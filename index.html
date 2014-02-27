@@ -113,10 +113,10 @@
 
     <section>
         <ul>
-            <li>Manipulation d'images</li>
-            <li>Algo complexe</li>
-            <li>Utilisation mémoire intensive</li>
-            <li>ORM... :trollface:</li>
+            <li>Manipulation de binaire (images...)</li>
+            <li>Algorithmes complexes</li>
+            <li>Cryptographie</li>
+            <li class="fragment">ORM... :trollface:</li>
         </ul>
     </section>
 
@@ -129,11 +129,35 @@
     </section>
 
     <section>
-        <h2>Zend Engine</h2>
+        <h2>La stack PHP</h2>
 
-        <h3>Interprète PHP like a boss</h3>
+        <ul>
+            <li>PHP Core : request, stream, erreurs...</li>
+            <li>Zend Engine : OpCode et execution</li>
+            <li>Couche d'extensions ♥</li>
+        </ul>
 
-        <p>todo meme?</p>
+        <aside class="notes">
+            Le ZE laisse la main à la couche extension lors d'appels à du code d'une extension.
+            L'OPCode laisse alors la place a du C.
+        </aside>
+    </section>
+
+    <section>
+        <h2>Les extensions</h2>
+
+        <p>
+            Chargés au lancement de PHP <code>php -m</code> !
+        </p>
+
+        <p class="emphasis">
+            amqp apc apcu bcmath bz2 calendar Core ctype curl date dba
+            dom ereg exif fileinfo filter ftp gd gettext hash iconv imagick
+            intl json ldap libxml mbstring memcache memcached mhash mysql mysqli
+            openssl pcntl pcre PDO pdo_mysql pdo_pgsql pdo_sqlite pgsql Phar posix
+            Reflection session shmop SimpleXML soap sockets SPL sqlite3 standard sysvmsg
+            sysvsem sysvshm tokenizer wddx xdebug xml xmlreader xmlwriter Zend OPcache zip zlib...
+        </p>
     </section>
 
     <section>
@@ -142,7 +166,8 @@
         <ul>
             <li>utiliser des API's systèmes non accessibles via PHP ;</li>
             <li>améliorer les performances ;</li>
-            <li>obfusquer du code pour le vendre $$$$.</li>
+            <li>obfusquer du code pour le vendre $$$$ ;</li>
+            <li>devenir une star sur http://pecl.php.net/.</li>
         </ul>
     </section>
 

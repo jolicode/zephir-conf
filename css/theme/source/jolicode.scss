@@ -102,6 +102,15 @@ footer.joli {
   li {
     padding: 10px 0;
   }
+
+  p > code {
+    background-color: #3e3e3e;
+    border: 1px solid #7f7f7f;
+    color: #efefef;
+    font-style: serif;
+    padding: 3px 10px;
+  }
+
   pre {
     width: 100%;
 
