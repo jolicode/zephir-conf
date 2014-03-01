@@ -30,7 +30,7 @@ footer.joli {
 .jolistate .reveal .state-background {
   background: rgba(0, 0, 0, 0.6); }
 
-.big-shadow, .reveal section.present[data-background] h1, .reveal section.present[data-background] h2, .reveal section.present[data-background] h3, .reveal section.present[data-background] h4, .reveal section.present[data-background] h5, .reveal section.present[data-background] h6 {
+.big-shadow, .reveal section.present[data-background] h1, .reveal section.present[data-background] h2, .reveal section.present[data-background] h3, .reveal section.present[data-background] h4, .reveal section.present[data-background] h5, .reveal section.present[data-background] h6, .reveal section.present[data-background] p {
   text-shadow: -5px 5px 25px #000, 5px  -5px 25px #000, 5px 5px 25px #000, -5px -5px 25px #000; }
 
 .reveal section a img, .reveal section img {

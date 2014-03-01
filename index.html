@@ -71,7 +71,7 @@
 
     <section data-background="./images/jolicode.jpg">
         <aside class="notes">
-            todo
+            Un cadre avantageux, des missions intéressante et un engagement pour la qualité.
         </aside>
     </section>
 
@@ -114,20 +114,25 @@
     </section>
 
     <section>
+        <h2>Mais parfois...</h2>
+
         <ul>
-            <li>Manipulation de binaire (images...)</li>
-            <li>Algorithmes complexes</li>
-            <li>Cryptographie</li>
-            <li class="fragment">ORM... :trollface:</li>
+            <li>Manipulation de binaire (images...) ;</li>
+            <li>Algorithmes complexes ;</li>
+            <li>Cryptographie.</li>
+            <li class="fragment">ORM... <img src="images/trollface.png" alt="Trollface" height="100" style="vertical-align: middle" /></li>
         </ul>
+
+        <aside class="notes">
+            PHP est très bien mais parfois on a besoin de plus.
+            Voyons comment PHP marche.
+        </aside>
     </section>
 
     <section>
-        <h2>Zend Engine</h2>
+        <h2>Petit rappel</h2>
 
-        <h3>Interprète PHP like a boss since 1999</h3>
-
-        <p>todo meme?</p>
+        <img src="images/phpflow.png" alt="PHP Server flow" class="stretch" />
     </section>
 
     <section>
@@ -143,6 +148,14 @@
             Le ZE laisse la main à la couche extension lors d'appels à du code d'une extension.
             L'OPCode laisse alors la place a du C.
         </aside>
+    </section>
+
+    <section>
+        <h2>Zend Engine</h2>
+
+        <h3>Interprète PHP like a boss since 1999</h3>
+
+        <img src="images/Zend.png" alt="Zend Company" class="stretch" style="background-color:#efefef !important;" />
     </section>
 
     <section>
@@ -185,7 +198,8 @@
             <li>Base de PhalconPHP 2 ;</li>
             <li>Mix de PHP et de C...</li>
             <li>... écrit en C et en PHP ;</li>
-            <li>Encore en Alpha.</li>
+            <li>Encore en Alpha ;</li>
+            <li>Qui se souvient de HPHPc ?</li>
         </ul>
     </section>
 
@@ -193,9 +207,62 @@
         <h1>Le langage Zephir</h1>
 
         <ul>
-            <li>Fichiers .zep</li>
-            <li>Fortement typé, ou pas</li>
+            <li>Fichiers <code>.zep</code> ;</li>
+            <li>Fortement typé, ou pas ;</li>
+            <li>Compilateur en PHP ;</li>
+            <li>Apporte de nouvelles instructions ;</li>
+            <li>Fait pour être rapide.</li>
         </ul>
+    </section>
+
+    <section>
+        <h2>Quelques pré-requis</h2>
+
+        <ul>
+            <li>php5-dev</li>
+            <li>phpize</li>
+            <li>gcc, make...</li>
+            <li><a href="https://github.com/json-c/json-c">json-c</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Installation</h2>
+
+        <pre><code>$ git clone https://github.com/phalcon/zephir
+$ cd zephir
+$ ./install -c
+$ zephir help</code></pre>
+
+        <pre class="fragment"><code> _____              __    _
+/__  /  ___  ____  / /_  (_)____
+  / /  / _ \/ __ \/ __ \/ / ___/
+ / /__/  __/ /_/ / / / / / /
+/____/\___/ .___/_/ /_/_/_/
+         /_/
+
+Zephir version 0.3.10a</code></pre>
+    </section>
+
+    <section data-background="images/bonaldi.jpg">
+        <h1 style="margin-top: 30%;">Live Demo</h1>
+
+        <p class="footnote">
+            Effet Bonaldi : Toute démonstration d'un produit quelconque qui
+            fonctionnait parfaitement aux répétitions foirera lamentablement lors de la démonstration publique.
+        </p>
+    </section>
+
+    <section>
+        <h2>Aller plus loin</h2>
+
+        <p>Proche des performances C pure sur les algos complexes :</p>
+        <ul>
+            <li>Optimizer : </li>
+            <li>CBLOCK</li>
+        </ul>
+
+        <p class="footnote"><a href="http://simonholywell.com/post/2014/02/hhvm-vs-zephir-vs-php-the-showdown.html">Benchmark HHVM vs Zephir vs C vs PHP</a></p>
     </section>
 
     <section>
@@ -218,6 +285,16 @@
             <li><a href="http://www.php-compiler.net/">Phalanger</a>, compileur PHP vers .Net</li>
             <li><a href="https://github.com/symisc/PH7">PH7</a>, runtime et compileur PHP vers C</li>
             <li><a href="https://github.com/symisc/PH7">PH7</a>, runtime et compileur PHP vers C</li>
+        </ul>
+    </section>
+
+    <section>
+        <p>Chacune a ses avantages</p>
+
+        <ul>
+            <li>HHVM pour si</li>
+            <li>Zephir pour ça</li>
+            <li>PHP pour tous le reste (comme MasterCard)</li>
         </ul>
     </section>
 
