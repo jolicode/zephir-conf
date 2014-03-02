@@ -2,55 +2,58 @@
 
 ## Hello
 
-```shell
-zephir help
+    zephir help
 
-zephir init hello
+    zephir init hello
 
-cd hello
+    cd hello
 
-tree ./
+    tree ./
 
-more config.json
+    more config.json
 
-touch hello/hello.zep
-```
+    touch hello/hello.zep
 
-```zep
-namespace Hello;
 
-class Hello
-{
-    public function __construct(string name, int iterations)
+    namespace Hello;
+
+    class Hello
     {
-        while iterations > 0 {
-            let iterations -= 1;
-            echo sprintf("Hello %s!\n", name);
+        public function __construct(string name, int iterations)
+        {
+            while iterations > 0 {
+                let iterations -= 1;
+                echo sprintf("Hello %s!\n", name);
+            }
         }
     }
-}
-```
 
-```shell
-zephir build
 
-    Preparing for PHP compilation...
-    Preparing configuration file...
-    Compiling...
-    Installing...
-    [sudo] password for dalexandre:
-    Extension installed!
-    Add extension=hello.so to your php.ini
-    Don't forget to restart your web server
+> Petit jeu des différences avec PHP
 
-php -dextension=hello.so --ri hello                                                                                                                                                                                        23:59:12
+    zephir build
 
-    hello => enabled
-    Author =>
-    Version => 0.0.1
-    Powered by Zephir => Version 0.3.10a
+> Preparing for PHP compilation...
+> Preparing configuration file...
+> Compiling...
+> Installing...
+> [sudo] password for dalexandre:
+> Extension installed!
+> Add extension=hello.so to your php.ini
+> Don't forget to restart your web server
 
-php -dextension=hello.so -a
+    php -dextension=hello.so --ri hello                                                                                                                                                                                        23:59:12
 
-<?php
-new Hello\Hello("BeZend", 1);
+> hello => enabled
+> Author =>
+> Version => 0.0.1
+> Powered by Zephir => Version 0.3.10a
+
+    php -dextension=hello.so -a
+
+    new Hello\Hello("BeZend", 1);
+    new Hello\Hello("BeZend", 88);
+
+> Pas d'autoloading a mettre en place \o/
+
+
