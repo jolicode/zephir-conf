@@ -9,6 +9,7 @@
     cd hello
 
     tree ./
+    ls -lha ./
 
     more config.json
 

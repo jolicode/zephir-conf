@@ -184,6 +184,8 @@
             <li>devenir une star sur http://pecl.php.net/ ;</li>
             <li class="emphasis">améliorer les performances !</li>
         </ul>
+
+        <p class="footnote"><a href="http://simonholywell.com/post/2014/02/hhvm-vs-zephir-vs-php-the-showdown.html">Benchmark HHVM vs Zephir vs C vs PHP</a></p>
     </section>
 
     <section data-background="./images/c-book.jpg">
@@ -309,13 +311,78 @@ Zephir version 0.3.10a</code></pre>
     <section>
         <h2>Aller plus loin</h2>
 
-        <p>Proche des performances C pure sur les algos complexes :</p>
         <ul>
-            <li>Optimizer : </li>
-            <li>CBLOCK</li>
+            <li>Optimizer : remplacer des appels de fonctions ;</li>
+            <li>CBLOCK : injecter du C !</li>
         </ul>
+    </section>
 
-        <p class="footnote"><a href="http://simonholywell.com/post/2014/02/hhvm-vs-zephir-vs-php-the-showdown.html">Benchmark HHVM vs Zephir vs C vs PHP</a></p>
+    <section>
+        <h2>Optimizer</h2>
+
+        <ul>
+            <li>Classe PHP dans <code>/optimizers</code> ;</li>
+            <li>Remplace n'importe quelle fonction ;</li>
+            <li>Manipulation des Headers ;</li>
+            <li>Utilisé par Zephir lui-même.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="no-caps">StrlenOptimizer.php</h2>
+
+        <pre><code>$context->headersManager->add('kernel/string');
+
+$resolvedParams = $call->getReadOnlyResolvedParams($expression['parameters'], $context, $expression);
+
+return new CompiledExpression(
+            'int',
+            'zephir_fast_strlen_ev(' . $resolvedParams[0] . ')',
+            $expression
+);</code></pre>
+
+        <p><code>zephir_fast_strlen_ev</code> =&gt; <code>Z_STRLEN_P()</code></p>
+
+        <p class="footnote"><a href="https://github.com/phalcon/zephir/blob/master/Library/Optimizers/FunctionCall/StrlenOptimizer.php">Fichier complet</a></p>
+    </section>
+
+    <section>
+        <h2 class="no-caps">WhateverOptimizer.php</h2>
+
+        <ul>
+            <li>Phalcon 2 utilise le code C de Phalcon 1 ;</li>
+            <li>Ajoutez vos propres headers et fichiers C ;</li>
+            <li>Aucune limitation lié au langage.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>CBLOCK</h2>
+
+        <ul>
+            <li>Injecter du code en pure C ;</li>
+            <li>Dans les headers, avant la classe, dans une méthode...</li>
+            <li class="emphasis">A réserver aux pros (non documenté).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Syntaxe CBLOCK</h2>
+
+        <pre><code>%{
+    #include "kernel/require.h"
+}%</code></pre>
+
+        <pre><code>%{
+
+    // c implement fibonacci
+    static long fibonacci(long n) {
+        if (n < 2) return n;
+        else return fibonacci(n - 2) + fibonacci(n - 1);
+    }
+}%</code></pre>
+
+        <p><a href="https://github.com/phalcon/zephir/pull/21">En savoir plus</a></p>
     </section>
 
     <section>
