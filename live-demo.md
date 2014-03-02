@@ -42,7 +42,7 @@
 > Add extension=hello.so to your php.ini
 > Don't forget to restart your web server
 
-    php -dextension=hello.so --ri hello                                                                                                                                                                                        23:59:12
+    php -dextension=hello.so --ri hello
 
 > hello => enabled
 > Author =>
@@ -56,4 +56,48 @@
 
 > Pas d'autoloading a mettre en place \o/
 
+## Avantages de la compilation
+
+    namespace Hello;
+
+    class Hello
+    {
+        public function foo() -> boolean
+        {
+            return true;
+        }
+    }
+
+
+    namespace Hello;
+
+    class Hello
+    {
+        public function foo() -> boolean
+        {
+            return this->bar();
+        }
+    }
+
+
+    namespace Hello;
+
+    class Hello
+    {
+        public function foo(<\DateTime> date) -> boolean
+        {
+            return date;
+        }
+    }
+
+> Fonctionne quand même...
+
+    namespace Hello;
+
+    class Hello
+    {
+        protected foobar {
+            set, get
+        };
+    }
 
