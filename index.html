@@ -222,6 +222,8 @@
             <li>Apporte de nouvelles instructions ;</li>
             <li>Fait pour être rapide.</li>
         </ul>
+
+        <aside class="notes">Les optimisations sont "built-in".</aside>
     </section>
 
     <section>
@@ -230,8 +232,8 @@
         <ul>
             <li>pas de <code>&lt;?php</code> ;</li>
             <li>pas de <code>$</code> pour les variables ;</li>
-            <li>tout en objet avec namespace ;</li>
-            <li>tous les fichiers en lowercase ;</li>
+            <li>tout en objet et namespace ;</li>
+            <li>tous les noms de fichiers en lowercase ;</li>
             <li>pas de pointeur (<code>&amp;</code>) ;</li>
             <li>il faut pré-déclarer toutes les variables.</li>
         </ul>
@@ -401,27 +403,69 @@ return new CompiledExpression(
         <p class="footnote"><a href="https://github.com/phalcon/zephir/pull/21">En savoir plus</a></p>
     </section>
 
-    <section>
-        <h1>Une idée tordue</h1>
-
-        <blockquote cite="https://twitter.com/julienPauli/status/426754988354707456">
-            When I was asked what I think of Zephir, I answered that no tool can replace your brain and your knowledge. You'd better learn C, believe me
-
-            <em style="display: block;text-align: right;padding-right: 10px;">Julien Pauli</em>
-        </blockquote>
+    <section data-background="images/money.jpg">
+        <h1>Shut up</h1>
+        <h1 style="margin-top: 20%">Take my money</h1>
     </section>
 
     <section>
         <h2>Les alternatives</h2>
 
+        <h1 class="emphasis">HHVM</h1>
+
         <ul>
-            <li>Hack (<a href="http://www.hhvm.com/blog/">HHVM</a>)</li>
-            <li><a href="http://www.php-qb.net/">PHP QB</a>, extension qui execute l'OpCode Zend dans une VM typée statiquement</li>
-            <li><a href="https://github.com/laruence/php-yaf">PHP Yaf</a>, un framework en C</li>
-            <li><a href="http://www.php-compiler.net/">Phalanger</a>, compileur PHP vers .Net</li>
-            <li><a href="https://github.com/symisc/PH7">PH7</a>, runtime et compileur PHP vers C</li>
-            <li><a href="https://github.com/symisc/PH7">PH7</a>, runtime et compileur PHP vers C</li>
+            <li>Remplacement de Zend Engine ;</li>
+            <li>Nouvelle syntaxe typée <strong>Hack</strong> ;</li>
+            <li>Supporte 96% de ZF2 et 97% de Symfony2 (<a href="http://www.hhvm.com/frameworks/">src</a>).</li>
         </ul>
+    </section>
+
+    <section>
+        <h2>Les alternatives</h2>
+
+        <h1 class="emphasis">PHP-QB</h1>
+
+        <ul>
+            <li>Sous forme d'extension ;</li>
+            <li>Spécialisé dans les traitements binaires ;</li>
+            <li>Execute lui-même les méthodes taggués <code>@engine qb</code>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Les alternatives</h2>
+
+        <h1 class="emphasis">PH7</h1>
+
+        <ul>
+            <li>Permet d'executer du PHP depuis C ;</li>
+            <li>Non en fait non ;</li>
+            <li>Oubliez celui la.</li>
+        </ul>
+
+        <aside class="notes">Pour faire du Embed mais en PHP. Créé pour une interface de routeur à la base.</aside>
+    </section>
+
+    <section>
+        <h2>Les alternatives</h2>
+
+        <h1 class="emphasis">Phalanger</h1>
+
+        <ul>
+            <li>Runtime et compileur PHP pour .NET ;</li>
+            <li>Faite tourner du PHP sur le serveur ASP.NET de l'école !</li>
+            <li>Visual Studio et tout !</li>
+        </ul>
+
+        <aside class="notes">
+            Promet de meilleures performances aussi
+        </aside>
+    </section>
+
+    <section>
+        <h2>Quid des performances ?</h2>
+
+        <p>Todo parler du benchmark</p>
     </section>
 
     <section>
@@ -435,10 +479,32 @@ return new CompiledExpression(
     </section>
 
     <section>
+        <h2>Pour conclure</h2>
+
+        <blockquote cite="https://twitter.com/julienPauli/status/426754988354707456">
+            When I was asked what I think of Zephir, I answered that no tool can replace your brain and your knowledge. You'd better learn C, believe me
+
+            <em style="display: block;text-align: right;padding-right: 10px;">Julien Pauli</em>
+        </blockquote>
+
+        <p>Il a raison.</p>
+    </section>
+
+    <section>
+        <h2>Une question de balance</h2>
+
+        <h3>Temps de développement ?</h3>
+        <h3>Confiance dans le code ?</h3>
+    </section>
+
+
+
+    <section>
         <h2>Conclusion</h2>
 
         <p>
-            Zephir est un <span class="emphasis">outil</span> pour créer des extensions.
+            Zephir est un <span class="emphasis">outil</span> pour créer des extensions maintenable
+            par des développeurs PHP.
         </p>
         <p>
             Le code est moins maintenable qu'en PHP mais <span class="emphasis">plus qu'en C</span>.
