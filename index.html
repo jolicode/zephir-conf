@@ -403,6 +403,14 @@ return new CompiledExpression(
         <p class="footnote"><a href="https://github.com/phalcon/zephir/pull/21">En savoir plus</a></p>
     </section>
 
+    <section>
+        <h2>/!\ CBLOCK /!\</h2>
+
+        <p>Sérieusement, c'est dangereux.</p>
+
+        <aside class="notes">Le compilateur pourra pas vous prévenir !</aside>
+    </section>
+
     <section data-background="images/money.jpg">
         <h1>Shut up</h1>
         <h1 style="margin-top: 20%">Take my money</h1>
@@ -411,7 +419,7 @@ return new CompiledExpression(
     <section>
         <h2>Les alternatives</h2>
 
-        <h1 class="emphasis">HHVM</h1>
+        <h1 class="emphasis"><a href="http://www.hhvm.com/">HHVM</a></h1>
 
         <ul>
             <li>Remplacement de Zend Engine ;</li>
@@ -423,7 +431,7 @@ return new CompiledExpression(
     <section>
         <h2>Les alternatives</h2>
 
-        <h1 class="emphasis">PHP-QB</h1>
+        <h1 class="emphasis"><a href="http://www.php-qb.net">PHP-QB</a></h1>
 
         <ul>
             <li>Sous forme d'extension ;</li>
@@ -435,7 +443,7 @@ return new CompiledExpression(
     <section>
         <h2>Les alternatives</h2>
 
-        <h1 class="emphasis">PH7</h1>
+        <h1 class="emphasis"><a href="http://ph7.symisc.net">PH7</a></h1>
 
         <ul>
             <li>Permet d'executer du PHP depuis C ;</li>
@@ -449,7 +457,7 @@ return new CompiledExpression(
     <section>
         <h2>Les alternatives</h2>
 
-        <h1 class="emphasis">Phalanger</h1>
+        <h1 class="emphasis"><a href="http://www.php-compiler.net/">Phalanger</a></h1>
 
         <ul>
             <li>Runtime et compileur PHP pour .NET ;</li>
@@ -469,12 +477,15 @@ return new CompiledExpression(
     </section>
 
     <section>
-        <p>Chacune a ses avantages</p>
+        <h2>Chacune a ses avantages</h2>
 
+        <p>Vous avez besoin de vitesse :</p>
         <ul>
-            <li>HHVM pour si</li>
-            <li>Zephir pour ça</li>
-            <li>PHP pour tous le reste (comme MasterCard)</li>
+            <li>Pure ? <strong class="emphasis">Extension C</strong></li>
+            <li>Sans avoir un développeur C ? <strong class="emphasis">Zephir</strong></li>
+            <li>Sans changer votre code ? <strong class="emphasis">HHVM</strong></li>
+            <li>En gardant ZendEngine ? <strong class="emphasis">OpCache</strong></li>
+            <li class="fragment">Sans rien toucher ? <strong class="emphasis">Mastercard ©</strong></li>
         </ul>
     </section>
 
