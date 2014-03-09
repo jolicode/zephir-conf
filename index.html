@@ -299,7 +299,7 @@ class MyTest extends SomeNamespace\MyAnotherClass
         <ul>
             <li>php5-dev</li>
             <li>phpize</li>
-            <li>gcc, make...</li>
+            <li>gcc, make... (ce que vous voulez)</li>
             <li><a href="https://github.com/json-c/json-c">json-c</a></li>
         </ul>
     </section>
@@ -329,6 +329,81 @@ Zephir version 0.3.10a</code></pre>
             Effet Bonaldi : Toute démonstration d'un produit quelconque qui
             fonctionnait parfaitement aux répétitions foirera lamentablement lors de la démonstration publique.
         </p>
+    </section>
+
+    <section>
+        <h2>Array</h2>
+
+        <pre><code>// string keys
+let elements = ["foo": "bar", "bar": "foo"];
+
+// numeric keys
+let elements = [4: "bar", 8: "foo"];
+
+// mixed string and numeric keys
+let elements = [4: "bar", "foo": 8];</code></pre>
+
+        <p>Ni comme en PHP, ni comme en JSON.</p>
+    </section>
+
+    <section>
+        <h2>Elseif</h2>
+
+        <pre><code>if false {
+    echo "false?";
+} else {
+    if true {
+        echo "true!";
+    } else {
+        echo "neither true nor false";
+    }
+}</code></pre>
+
+        <p>We need to go deeper.</p>
+    </section>
+
+    <section>
+        <h2>Foreach</h2>
+
+        <pre><code>let items = ["a": 1, "b": 2, "c": 3, "d": 4];
+
+for key, value in items {
+    echo key, " ", value, "\n";
+}</code></pre>
+
+        <p>Plus proche de Javascript.</p>
+    </section>
+
+    <section>
+        <h2>Fetch</h2>
+
+        <pre><code>&lt;?php
+
+if (isset($myArray[$key])) {
+    $value = $myArray[$key];
+    echo $value;
+}</code></pre>
+
+        <pre><code>if fetch value, myArray[key] {
+    echo value;
+}</code></pre>
+    </section>
+
+    <section>
+        <h2>Getter et setter</h2>
+
+        <pre><code>namespace App;
+
+class MyClass
+{
+    protected myProperty {
+        set, get, toString
+    };
+
+    protected someProperty = 10 {
+        set, get
+    }
+}</code></pre>
     </section>
 
     <section>

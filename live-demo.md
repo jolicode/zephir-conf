@@ -92,13 +92,3 @@
     }
 
 > Fonctionne quand même...
-
-    namespace Hello;
-
-    class Hello
-    {
-        protected foobar {
-            set, get
-        };
-    }
-
