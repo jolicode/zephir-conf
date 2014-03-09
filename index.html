@@ -38,7 +38,7 @@
     <section>
         <h1>Zephir</h1>
 
-        <h3>Extension PHP pour les noobs</h3>
+        <h3 class="no-caps">Extension PHP pour les noobs</h3>
 
         <p>
             <small>Présenté par <a href="http://damienalexandre.fr">Damien Alexandre</a> / <a
@@ -90,12 +90,12 @@
         <h2>More is less</h2>
 
         <ul>
-            <li>De plus en plus de fonctionnalités</li>
+            <li>De plus en plus de fonctionnalités ;</li>
             <li>De plus en plus de rapide :
                 <ul>
-                    <li>5.2 à 5.3 = ~20% plus rapide</li>
-                    <li>5.3 à 5.4 = 20-40% plus rapide</li>
-                    <li>5.5 = OpCache built-in</li>
+                    <li>5.2 à 5.3 = ~20% plus rapide ;</li>
+                    <li>5.3 à 5.4 = 20-40% plus rapide ;</li>
+                    <li>5.5 = OpCache built-in.</li>
                 </ul>
             </li>
         </ul>
@@ -105,6 +105,8 @@
         <h2>PHP est rarement le coupable si votre site est à chier.</h2>
 
         <p>Pour la majorité des applications, il est très bien.</p>
+
+        <aside class="notes">Bottleneck plutôt côté IO que purement PHP.</aside>
     </section>
 
     <section data-background="./images/atomic.jpg">
@@ -114,7 +116,7 @@
     </section>
 
     <section>
-        <h2>Mais parfois...</h2>
+        <h2>Gourmand en mémoire</h2>
 
         <ul>
             <li>Manipulation de binaire (images...) ;</li>
@@ -125,6 +127,7 @@
 
         <aside class="notes">
             PHP est très bien mais parfois on a besoin de plus.
+            Un framework bouffe des dizaine de mégooctect de mémoire.
             Voyons comment PHP marche.
         </aside>
     </section>
@@ -144,9 +147,9 @@
         <h2>La stack PHP</h2>
 
         <ul>
-            <li>PHP Core : request, stream, erreurs...</li>
-            <li>Zend Engine : OpCode et execution</li>
-            <li>Couche d'extensions ♥</li>
+            <li>PHP Core : request, stream, erreurs&hellip; ;</li>
+            <li>Zend Engine : OpCode et execution ;</li>
+            <li>Couche d'extensions ♥.</li>
         </ul>
 
         <aside class="notes">
@@ -158,9 +161,11 @@
     <section>
         <h2>Zend Engine</h2>
 
-        <h3>Interprète PHP like a boss since 1999</h3>
+        <h3 class="no-caps">Interprète PHP like a boss since 1999</h3>
 
         <img src="images/Zend.png" alt="Zend Company" class="stretch" style="background-color:#efefef !important;" />
+
+        <aside class="notes">Quoi qu'on en dise, HHVM n'est pas encore au niveau. ZE FTW. 98% de vos site l'utilisent.</aside>
     </section>
 
     <section>
@@ -435,7 +440,7 @@ class MyClass
     </section>
 
     <section>
-        <iframe width="100%" height="1800px" src="phpinfo.html" frameborder="0"></iframe>
+        <iframe width="100%" height="1800px" src="phpinfo.html"></iframe>
     </section>
 
     <section>
@@ -463,7 +468,11 @@ class MyClass
 
         <pre><code>$context->headersManager->add('kernel/string');
 
-$resolvedParams = $call->getReadOnlyResolvedParams($expression['parameters'], $context, $expression);
+$resolvedParams = $call->getReadOnlyResolvedParams(
+            $expression['parameters'],
+            $context,
+            $expression
+);
 
 return new CompiledExpression(
             'int',
@@ -644,18 +653,6 @@ return new CompiledExpression(
             <li>En gardant ZendEngine ? <strong class="emphasis">OpCache</strong></li>
             <li class="fragment">Sans rien toucher ? <strong class="emphasis">Mastercard ©</strong></li>
         </ul>
-    </section>
-
-    <section>
-        <h2>Pour conclure</h2>
-
-        <blockquote cite="https://twitter.com/julienPauli/status/426754988354707456">
-            When I was asked what I think of Zephir, I answered that no tool can replace your brain and your knowledge. You'd better learn C, believe me
-
-            <em style="display: block;text-align: right;padding-right: 10px;">Julien Pauli</em>
-        </blockquote>
-
-        <p>Il a raison.</p>
     </section>
 
     <section>
