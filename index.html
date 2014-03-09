@@ -133,6 +133,11 @@
         <h2>Petit rappel</h2>
 
         <img src="images/phpflow.png" alt="PHP Server flow" class="stretch" />
+
+        <aside class="notes">
+            Un PHP par connection, et donc plein de mémoire bouffée. On scale PHP en ajoutant des serveurs,
+            combien, c'est la question.
+        </aside>
     </section>
 
     <section>
@@ -196,6 +201,10 @@
 
             Surtout une extension Zephir a plus de chances d'être
             maintenable par des dev's PHP qu'une en C.
+
+            On est des développeurs haut niveau, C est trop exigent.
+
+            Un dev PHP n'est pas moins bon qu'un dev C. C'est juste deux monde différents.
         </aside>
     </section>
 
@@ -210,6 +219,13 @@
             <li>Base de PhalconPHP 2 ;</li>
             <li>Qui se souvient de HPHPc ?</li>
         </ul>
+
+        <aside class="notes">
+            Pour info, PhalconPHP c'est le framework PHP le plus rapide
+            d'après le benchmark de techempower.com, et il est devant des applis en Node.js / MongoDB.
+
+            Créé parce que PhalconPHP grossi mais personne contribu, forcement c'est en C.
+        </aside>
     </section>
 
     <section>
@@ -224,6 +240,13 @@
         </ul>
 
         <aside class="notes">Les optimisations sont "built-in".</aside>
+    </section>
+
+    <section>
+        <h1>Permet</h1>
+        <h2 class="no-caps">à un développeur haut niveau (PHP) de faire une extension bas niveau</h2>
+
+        <p>Merci, au revoir.</p>
     </section>
 
     <section>
@@ -249,6 +272,20 @@
             <li>le type hint avec des crochets :<br/><code>function test(&lt;Coucou\Test&gt; foo)</code></li>
             <li class="fragment">et il faut compiler pour tester.</li>
         </ul>
+    </section>
+
+    <section>
+        <pre><code>namespace Test;
+
+class MyTest extends SomeNamespace\MyAnotherClass
+{
+    public function someFunction(a, b)
+    {
+        return a + b;
+    }
+}</code></pre>
+
+        <p>Ça sent pareil mais s'en est pas.</p>
     </section>
 
     <section data-background="images/drool.gif">
@@ -370,8 +407,11 @@ return new CompiledExpression(
         <ul>
             <li>Phalcon 2 utilise le code C de Phalcon 1 ;</li>
             <li>Ajoutez vos propres headers et fichiers C ;</li>
+            <li>Si Zephir vous limite, vous avez la main ;</li>
             <li>Aucune limitation lié au langage.</li>
         </ul>
+
+        <aside class="notes">La minification JS de Phalcon est écrite en pure C.</aside>
     </section>
 
     <section>
@@ -417,6 +457,19 @@ return new CompiledExpression(
     </section>
 
     <section>
+        <h2>Zephir sux</h2>
+
+        <ul>
+            <li>Pas facile de débugguer (stack trace) ;</li>
+            <li>Si ça foire, tu sais pas lire le code C ;</li>
+            <li>todo ;</li>
+            <li>C'est encore en Alpha - patience.</li>
+        </ul>
+
+        <aside class="notes">Sera déclaré stable quand Phalcon 2 sera fini (Alpha sortie en janvier).</aside>
+    </section>
+
+    <section>
         <h2>Les alternatives</h2>
 
         <h1 class="emphasis"><a href="http://www.hhvm.com/">HHVM</a></h1>
@@ -426,6 +479,8 @@ return new CompiledExpression(
             <li>Nouvelle syntaxe typée <strong>Hack</strong> ;</li>
             <li>Supporte 96% de ZF2 et 97% de Symfony2 (<a href="http://www.hhvm.com/frameworks/">src</a>).</li>
         </ul>
+
+        <aside class="notes">Pas encore PHP. Bientôt?</aside>
     </section>
 
     <section>
@@ -473,9 +528,10 @@ return new CompiledExpression(
     <section>
         <h2>Les alternatives</h2>
 
-        <h1 class="emphasis"><a href="https://github.com/vk-com/kphp-kdb">VK-KittenPHP</a></h1>
+        <h1 class="emphasis no-caps"><a href="https://github.com/vk-com/kphp-kdb">KittenPHP</a></h1>
 
         <ul>
+            <li>Le nom déchire ;</li>
             <li>PHP vers C++ ;</li>
             <li>Documentation en Russe (vk.com).</li>
         </ul>
@@ -489,6 +545,17 @@ return new CompiledExpression(
         <h2>Quid des performances ?</h2>
 
         <p>Todo parler du benchmark</p>
+    </section>
+
+    <section>
+        <h2 class="no-caps">PhalconPHP 1 &amp; 2</h2>
+
+        <ul>
+            <li>Phalcon 1 en pure C : 2107 req/s ;</li>
+            <li>Phalcon 2 en Zephir : 2120 req/s.</li>
+        </ul>
+
+        <p class="footnote"><a href="http://blog.phalconphp.com/post/61527480269/phalcon-2-0-progress-benchmarks">Source</a></p>
     </section>
 
     <section>
@@ -517,6 +584,18 @@ return new CompiledExpression(
     </section>
 
     <section>
+        <h2>Pour conclure</h2>
+
+        <blockquote cite="https://www.acquia.com/blog/php-performance-fast-enough-and-improving-jonathan-klein">
+            PHP is a language that optimizes for speed of development, not speed of execution.
+
+            <em style="display: block;text-align: right;padding-right: 10px;">Jonathan Klein (Etsy)</em>
+        </blockquote>
+
+        <p>Il a raison.</p>
+    </section>
+
+    <section>
         <h2>Une question de balance</h2>
 
         <h3>Temps de développement ?</h3>
@@ -535,6 +614,8 @@ return new CompiledExpression(
         <p>
             Le code est moins maintenable qu'en PHP mais <span class="emphasis">plus qu'en C</span>.
         </p>
+
+        <p>Ne refaite pas toutes vos applications avec.</p>
     </section>
 
     <section>
