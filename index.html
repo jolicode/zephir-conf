@@ -273,7 +273,6 @@
         <ul>
             <li><code>let</code> devant chaque modification ;</li>
             <li>pas de variable globale ;</li>
-            <li>moins "productif" ;</li>
             <li>le type hint avec des crochets :<br/><code>function test(&lt;Coucou\Test&gt; foo)</code></li>
             <li class="fragment">et il faut compiler pour tester.</li>
         </ul>
@@ -464,7 +463,7 @@ class MyClass
     </section>
 
     <section>
-        <h2 class="no-caps">StrlenOptimizer.php</h2>
+        <h2 class="no-caps">TODO mieux StrlenOptimizer.php</h2>
 
         <pre><code>$context->headersManager->add('kernel/string');
 
@@ -544,9 +543,8 @@ return new CompiledExpression(
         <h2>Zephir sux</h2>
 
         <ul>
-            <li>Pas facile de débugguer (stack trace) ;</li>
-            <li>Si ça foire, tu sais pas lire le code C ;</li>
-            <li>todo ;</li>
+            <li>Pas facile de débugguer (pas de stack trace) ;</li>
+            <li>Si ça plante, tu ne sais pas lire le code C ;</li>
             <li>C'est encore en Alpha - patience.</li>
         </ul>
 
@@ -568,7 +566,8 @@ return new CompiledExpression(
             <li>Supporte 96% de ZF2 et 97% de Symfony2 (<a href="http://www.hhvm.com/frameworks/">src</a>).</li>
         </ul>
 
-        <aside class="notes">Pas encore PHP. Bientôt?</aside>
+        <aside class="notes">Attention avec HACK, ne sera executable que dans cet env.
+        Quid de l'avenir de HHVM / Facebook? Besoin d'un support fort.</aside>
     </section>
 
     <section>
@@ -578,9 +577,19 @@ return new CompiledExpression(
 
         <ul>
             <li>Sous forme d'extension ;</li>
-            <li>Spécialisé dans les traitements binaires ;</li>
+            <li>Spécialisé dans les traitements binaires (rendus 2D) ;</li>
             <li>Execute lui-même les méthodes taggués <code>@engine qb</code>.</li>
         </ul>
+
+        <aside class="notes">
+            Un seul contributeur : Chung Leong, depuis mars 2013.
+
+            DocBlock @var sont lu, types fortement les propriétés et paramètres
+
+            Ajoute aussi "forl" pour le multithread!
+
+            Différe via le typage et les String et Array bien moins puissant.
+        </aside>
     </section>
 
     <section>
@@ -591,7 +600,7 @@ return new CompiledExpression(
         <ul>
             <li>Permet d'executer du PHP depuis C ;</li>
             <li>Non en fait non ;</li>
-            <li>Oubliez celui la.</li>
+            <li>Oubliez-le celui la.</li>
         </ul>
 
         <aside class="notes">Pour faire du Embed mais en PHP. Créé pour une interface de routeur à la base.</aside>
@@ -605,11 +614,11 @@ return new CompiledExpression(
         <ul>
             <li>Runtime et compileur PHP pour .NET ;</li>
             <li>Faite tourner du PHP sur le serveur ASP.NET de l'école !</li>
-            <li>Visual Studio et tout !</li>
+            <li>Visual Studio !</li>
         </ul>
 
         <aside class="notes">
-            Promet de meilleures performances aussi
+            2011. Toujours actif. Promet de meilleures performances aussi. Fait tourner Wordpress.
         </aside>
     </section>
 
@@ -641,9 +650,11 @@ return new CompiledExpression(
         </ul>
 
         <aside class="notes">
-            Et si finalement le C ne vous fait pas peur,
-            mais que c'est ZendEngine qui vous rebute,
-            PHP CPP est l'interface qu'il vous faut.
+            Si C ne vous fait pas peur,
+            mais que ZendEngine rebute,
+            PHP CPP est l'interface.
+
+            LEAN PUB par PASCAL MARTIN: 418 pages d'API Zend.
         </aside>
     </section>
 
@@ -656,6 +667,16 @@ return new CompiledExpression(
     </section>
 
     <section>
+        <h2>Rendu 2D</h2>
+
+        <img src="images/bench-result.jpg" alt="" class="stretch" />
+
+        <aside class="notes">
+            Bench de Simon Holywell
+        </aside>
+    </section>
+
+    <section>
         <h2 class="no-caps">HHVM vs Zephir vs PHP</h2>
 
         <img src="images/bench-time.png" alt=""/>
@@ -664,6 +685,10 @@ return new CompiledExpression(
         <h2 class="no-caps">HHVM vs Zephir vs PHP</h2>
 
         <img src="images/bench-mem.png" alt=""/>
+
+        <aside class="notes">
+            HHVM est pas fait pour cela.
+        </aside>
     </section>
 
     <section>
@@ -687,7 +712,6 @@ return new CompiledExpression(
             <li>Pure ? <strong class="emphasis">Extension C</strong></li>
             <li>Sans avoir un développeur C ? <strong class="emphasis">Zephir</strong></li>
             <li>Sans changer votre code ? <strong class="emphasis">HHVM</strong></li>
-            <li>En gardant ZendEngine ? <strong class="emphasis">OpCache</strong></li>
             <li class="fragment">Sans rien toucher ? <strong class="emphasis">Mastercard ©</strong></li>
         </ul>
     </section>
@@ -712,7 +736,13 @@ return new CompiledExpression(
             <em style="display: block;text-align: right;padding-right: 10px;">Jonathan Klein (Etsy)</em>
         </blockquote>
 
-        <p>Et Zephir fait l'inverse \o/</p>
+        <p>Zephir fait l'inverse \o/</p>
+    </section>
+
+    <section>
+        <h2>Devez-vous l'utiliser&nbsp;?</h2>
+
+        <h1 class="fragment">¯\_(ツ)_/¯</h1>
     </section>
 
     <section>
@@ -746,6 +776,7 @@ return new CompiledExpression(
             <li><a href="http://www.sitepoint.com/hhvm-vs-zend-engine-php-6/">Unicorn PHP</a></li>
             <li><a href="http://www.flickr.com/photos/60969081@N00/8292545493">Bombe atomique</a></li>
             <li><a href="http://iamfabulousgeri.blogspot.fr/2011/06/kthxbye.html">Bye</a></li>
+            <li><a href="https://leanpub.com/developper-une-extension-php">Développer une extension PHP (en C)</a></li>
         </ul>
     </section>
 
