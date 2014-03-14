@@ -54,7 +54,9 @@
 
     new Hello\Hello("BeZend", 1);
     new Hello\Hello("BeZend", 88);
+    new Hello\Hello(1337, 88);
 
+> Ajouter "!" après "string", montrer qu'on peux faire du typage fort.
 > Pas d'autoloading a mettre en place \o/
 
 ## Avantages de la compilation
