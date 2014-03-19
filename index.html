@@ -65,7 +65,7 @@
         <h2>Conseil, r&eacute;alisation, audit, expertise et formation</h2>
 
         <p class="footnote">
-            &hellip;Poney, Guinness et gif anim&eacute;.
+            &hellip;Poney, Guinness et gif anim&eacute;s.
         </p>
     </section>
 
@@ -75,8 +75,21 @@
         </aside>
     </section>
 
+    <section>
+        <h2>Vos 45 prochaines minutes</h2>
 
-    <section>todo plan</section>
+        <ul>
+            <li>PHP, Zend et Zephir ;</li>
+            <li>Le langage ;
+                <ul>
+                    <li>Démonstration ;</li>
+                    <li>Optimisations ;</li>
+                </ul>
+            </li>
+            <li>Les alternatives ;</li>
+            <li>Conclusion.</li>
+        </ul>
+    </section>
 
     <section data-state="zephir-intro">
         <h2>PHP is not slow</h2>
@@ -119,7 +132,7 @@
         <h2>Gourmand en mémoire</h2>
 
         <ul>
-            <li>Manipulation de binaire (images...) ;</li>
+            <li>Manipulation de binaires (images...) ;</li>
             <li>Algorithmes complexes ;</li>
             <li>Cryptographie.</li>
             <li class="fragment">ORM... <img src="images/trollface.png" alt="Trollface" height="100" style="vertical-align: middle" /></li>
@@ -143,7 +156,7 @@
         </aside>
     </section>
 
-    <section>
+<!--    <section>
         <h2>La stack PHP</h2>
 
         <ul>
@@ -153,11 +166,10 @@
         </ul>
 
         <aside class="notes">
-            Le ZE laisse la main à la couche extension lors d'appels à du code d'une extension.
-            L'OPCode laisse alors la place a du C.
+
         </aside>
     </section>
-
+-->
     <section>
         <h2>Zend Engine</h2>
 
@@ -165,7 +177,12 @@
 
         <img src="images/Zend.png" alt="Zend Company" class="stretch" style="background-color:#efefef !important;" />
 
-        <aside class="notes">Quoi qu'on en dise, HHVM n'est pas encore au niveau. ZE FTW. 98% de vos site l'utilisent.</aside>
+        <aside class="notes">
+            Le ZE laisse la main à la couche extension lors d'appels à du code d'une extension.
+
+            L'OPCode laisse alors la place a du C.
+
+            Quoi qu'on en dise, HHVM n'est pas encore au niveau. ZE FTW. 98% de vos site l'utilisent.</aside>
     </section>
 
     <section>
@@ -189,7 +206,7 @@
         <h2>Pourquoi faire une extension</h2>
 
         <ul>
-            <li>utiliser des API systèmes non accessibles via PHP ;</li>
+            <li>utiliser des interfaces système non accessibles via PHP ;</li>
             <li>obfusquer du code pour le vendre $$$$ ;</li>
             <li>devenir une star sur http://pecl.php.net/ ;</li>
             <li class="emphasis">améliorer les performances !</li>
@@ -249,13 +266,13 @@
 
     <section>
         <h1>Permet</h1>
-        <h2 class="no-caps">à un développeur haut niveau (PHP) de faire une extension bas niveau</h2>
+        <h2 class="no-caps">à un développeur haut niveau (PHP) de faire une extension bas niveau (C)</h2>
 
         <p>Merci, au revoir.</p>
     </section>
 
     <section>
-        <h2>Les différences avec PHP</h2>
+        <h2>Les différences<br>avec PHP</h2>
 
         <ul>
             <li>pas de <code>&lt;?php</code> ;</li>
@@ -268,7 +285,7 @@
     </section>
 
     <section>
-        <h2>Les différences avec PHP, épisode 2</h2>
+        <h2>Les différences<br/>avec PHP, épisode 2</h2>
 
         <ul>
             <li><code>let</code> devant chaque modification ;</li>
@@ -463,7 +480,7 @@ class MyClass
     </section>
 
     <section>
-        <h2 class="no-caps">TODO mieux StrlenOptimizer.php</h2>
+        <h2 class="no-caps">StrlenOptimizer.php</h2>
 
         <pre><code>$context->headersManager->add('kernel/string');
 
@@ -482,6 +499,10 @@ return new CompiledExpression(
         <p><code>zephir_fast_strlen_ev</code> =&gt; <code>Z_STRLEN_P()</code></p>
 
         <p class="footnote"><a href="https://github.com/phalcon/zephir/blob/master/Library/Optimizers/FunctionCall/StrlenOptimizer.php">Fichier complet</a></p>
+
+        <aside class="notes">
+            Remplace de nombreux appels "PHP userland" par des appels Zend (mais complétés avec types, checks divers...)
+        </aside>
     </section>
 
     <section>
@@ -491,7 +512,7 @@ return new CompiledExpression(
             <li>Phalcon 2 utilise le code C de Phalcon 1 ;</li>
             <li>Ajoutez vos propres headers et fichiers C ;</li>
             <li>Si Zephir vous limite, vous avez la main ;</li>
-            <li>Aucune limitation lié au langage.</li>
+            <li>Aucune limitation liée au langage.</li>
         </ul>
 
         <aside class="notes">La minification JS de Phalcon est écrite en pure C.</aside>
@@ -501,7 +522,7 @@ return new CompiledExpression(
         <h2>CBLOCK</h2>
 
         <ul>
-            <li>Injecter du code en pure C ;</li>
+            <li>Injecter du code en pur C ;</li>
             <li>Dans les headers, avant la classe, dans une méthode...</li>
             <li class="emphasis">A réserver aux pros (non documenté).</li>
         </ul>
@@ -545,19 +566,23 @@ return new CompiledExpression(
         <ul>
             <li>Pas facile de débugguer (pas de stack trace) ;</li>
             <li>Si ça plante, tu ne sais pas lire le code C ;</li>
-            <li><code>Private</code> n'a pas le même sens ;</li>
+            <li><code>Private</code> n'a pas le même sens (<a href="https://github.com/phalcon/zephir/issues/251">bug</a>) ;</li>
             <li>Des bugs, des segfaults, des larmes ;</li>
             <li>C'est encore en Alpha - patience.</li>
         </ul>
 
         <aside class="notes">
-            J'ai essayé de porter Event Dispatcher, pas réussi.
+            J'ai essayé de porter Event Dispatcher, pas réussi. J'ai ouvert 6 bugs chez eux.
+
+            Les arrays se comportent pas bien du tout.
 
             Sera déclaré stable quand Phalcon 2 sera fini (Alpha sortie en janvier).</aside>
     </section>
 
     <section>
         <h1>D'autres solutions</h1>
+
+        <p>Nous vivons une époque formidable.</p>
     </section>
 
     <section>
@@ -583,7 +608,7 @@ return new CompiledExpression(
         <ul>
             <li>Sous forme d'extension ;</li>
             <li>Spécialisé dans les traitements binaires (rendus 2D) ;</li>
-            <li>Execute lui-même les méthodes taggués <code>@engine qb</code>.</li>
+            <li>Exécute lui-même les méthodes tagguées <code>@engine qb</code>.</li>
         </ul>
 
         <aside class="notes">
@@ -605,7 +630,7 @@ return new CompiledExpression(
         <ul>
             <li>Permet d'executer du PHP depuis C ;</li>
             <li>Non en fait non ;</li>
-            <li>Oubliez-le celui la.</li>
+            <li>Oubliez-le celui-là.</li>
         </ul>
 
         <aside class="notes">Pour faire du Embed mais en PHP. Créé pour une interface de routeur à la base.</aside>
@@ -651,7 +676,7 @@ return new CompiledExpression(
         <ul>
             <li>Librairie C++ pour développeur PHP ;</li>
             <li>S'occupe de toute la gestion du Zend Engine ;</li>
-            <li>Création d'extension facilité.</li>
+            <li>Création d'extension facilitée.</li>
         </ul>
 
         <aside class="notes">
@@ -725,8 +750,8 @@ return new CompiledExpression(
         <h2>Une question de balance</h2>
 
         <ul>
-            <li>Deadline ?</li>
-            <li>Confiance dans le code ?</li>
+            <li>Deadline ? Compétances ?</li>
+            <li>Confiance dans le code généré ?</li>
             <li>Équipes solides ?</li>
             <li class="emphasis fragment">Est-ce vraiment utile ? PHP est-il vraiment le goulot ?</li>
         </ul>
@@ -741,28 +766,28 @@ return new CompiledExpression(
             <em style="display: block;text-align: right;padding-right: 10px;">Jonathan Klein (Etsy)</em>
         </blockquote>
 
-        <p>Zephir fait l'inverse \o/</p>
+        <p>Zephir fait les deux.</p>
     </section>
 
     <section>
         <h2>Devez-vous l'utiliser&nbsp;?</h2>
 
-        <h1 class="fragment">¯\_(ツ)_/¯</h1>
+        <h1 class="fragment emphasis">¯\_(ツ)_/¯</h1>
     </section>
 
     <section>
         <h2>Conclusion</h2>
 
         <p>
-            Zephir est un <span class="emphasis">outil</span> pour créer des extensions maintenables par des développeurs PHP.
+            <span class="emphasis">Zephir est un outil</span> pour créer des extensions maintenables par des développeurs PHP.
         </p>
 
         <p>
-            Vous coderez moins vite qu'en PHP mais <span class="emphasis">plus qu'en C</span>.
+            Vous coderez moins vite qu'en PHP mais <span class="emphasis">plus vite qu'en C</span>.
         </p>
 
         <p>
-            Vous avez l'interdiction de refaire toutes vos applications avec. <small>Attention je vous surveille.</small>
+            Interdiction de refaire applications entière avec. <small>Attention je vous surveille.</small>
         </p>
     </section>
 
@@ -775,13 +800,14 @@ return new CompiledExpression(
     </section>
 
     <section>
-        <h2>Crédits photos et sources</h2>
+        <h2>Photos, sources et ressources</h2>
 
         <ul>
             <li><a href="http://www.sitepoint.com/hhvm-vs-zend-engine-php-6/">Unicorn PHP</a></li>
             <li><a href="http://www.flickr.com/photos/60969081@N00/8292545493">Bombe atomique</a></li>
             <li><a href="http://iamfabulousgeri.blogspot.fr/2011/06/kthxbye.html">Bye</a></li>
             <li><a href="https://leanpub.com/developper-une-extension-php">Développer une extension PHP (en C)</a></li>
+            <li><a href="https://github.com/jolicode/symfony2-eventdispatcher-extension">Symfony2 EventDispatcher extension</a></li>
         </ul>
     </section>
 
