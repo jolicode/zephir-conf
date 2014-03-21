@@ -16,18 +16,18 @@
     touch hello/hello.zep
 
 
-    namespace Hello;
+namespace Hello;
 
-    class Hello
+class Hello
+{
+    public function __construct(string name, int iterations)
     {
-        public function __construct(string name, int iterations)
-        {
-            while iterations > 0 {
-                let iterations -= 1;
-                echo sprintf("Hello %s!\n", name);
-            }
+        while iterations > 0 {
+            let iterations -= 1;
+            echo sprintf("Hello %s!\n", name);
         }
     }
+}
 
 
 > Petit jeu des différences avec PHP
@@ -61,36 +61,36 @@
 
 ## Avantages de la compilation
 
-    namespace Hello;
+namespace Hello;
 
-    class Hello
+class Hello
+{
+    public function foo() -> boolean
     {
-        public function foo() -> boolean
-        {
-            return true;
-        }
+        return true;
     }
+}
 
 
-    namespace Hello;
+namespace Hello;
 
-    class Hello
+class Hello
+{
+    public function foo() -> boolean
     {
-        public function foo() -> boolean
-        {
-            return this->bar();
-        }
+        return this->bar();
     }
+}
 
 
-    namespace Hello;
+namespace Hello;
 
-    class Hello
+class Hello
+{
+    public function foo(<\DateTime> date) -> boolean
     {
-        public function foo(<\DateTime> date) -> boolean
-        {
-            return date;
-        }
+        return date;
     }
+}
 
 > Fonctionne quand même...
